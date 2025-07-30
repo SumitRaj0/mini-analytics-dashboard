@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 font-sans;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  /* Scale factor for 150% to 100% conversion */
+  :root {
+    --scale-factor: 1.0; /* Default no scaling */
+    --base-scale: 1.5; /* Original design scale */
+    --target-scale: 1.0; /* Target display scale */
+    --scale-ratio: 1.0; /* Default no scaling */
+  }
+  
+  /* Apply scaling for 100% zoom optimization */
+  .dashboard-container {
+    transform: scale(var(--scale-ratio));
+    transform-origin: top left;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  /* Fallback for browsers without JavaScript zoom detection */
+  .dashboard-container:not([style*="transform"]) {
+    transform: scale(1.0);
+    transform-origin: top left;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  /* Alternative approach: scale based on viewport */
+  .scale-100-optimized {
+    transform: scale(0.6667);
+    transform-origin: top left;
+  }
+  
+  /* Responsive scaling for different screen sizes */
+  @media screen and (max-width: 1200px) {
+    .dashboard-container {
+      transform: scale(0.75);
+      width: calc(100% / 0.75);
+      height: calc(100vh / 0.75);
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .dashboard-container {
+      transform: scale(0.8);
+      width: calc(100% / 0.8);
+      height: calc(100vh / 0.8);
+    }
+  }
+  
+  /* Better scaling for different zoom levels */
+  @media screen and (max-width: 1400px) {
+    body {
+      font-size: 17px;
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    body {
+      font-size: 16px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    body {
+      font-size: 15px;
+    }
+  }
+  
+  /* Ensure proper scaling at 100% zoom */
+  @media screen and (min-width: 1200px) and (max-width: 1600px) {
+    body {
+      font-size: 18px;
+    }
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-lg border border-gray-200 p-4;
+  }
+  
+  .metric-card {
+    @apply card hover:shadow-medium transition-all duration-200;
+  }
+  
+  .badge {
+    @apply inline-flex items-center px-2 py-1 rounded text-xs font-medium;
+  }
+  
+  .badge-success {
+    @apply badge bg-success-100 text-success-800;
+  }
+  
+  .badge-danger {
+    @apply badge bg-danger-100 text-danger-800;
+  }
+  
+  .badge-neutral {
+    @apply badge bg-gray-100 text-gray-800;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-3 py-2 rounded font-medium transition-all focus:outline-none text-sm;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+  }
+  
+  .loading-skeleton {
+    @apply animate-pulse bg-gray-200 rounded;
+  }
+
+  /* Enhanced loading states for mobile */
+  .loading-shimmer {
+    @apply relative overflow-hidden;
+  }
+  
+  .loading-shimmer::before {
+    content: '';
+    @apply absolute inset-0 -translate-x-full animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/60 to-transparent;
+  }
+
+  /* Mobile-friendly scrollbar */
+  .scroll-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(203 213 225) transparent;
+  }
+  
+  .scroll-thin::-webkit-scrollbar {
+    @apply w-1 h-1;
+  }
+  
+  .scroll-thin::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  
+  .scroll-thin::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+  
+  .scroll-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+
+  /* Responsive text utilities */
+  .text-responsive-xs {
+    @apply text-xs sm:text-sm;
+  }
+  
+  .text-responsive-sm {
+    @apply text-sm sm:text-base;
+  }
+  
+  .text-responsive-base {
+    @apply text-base sm:text-lg;
+  }
+  
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl;
+  }
+
+  /* Mobile-optimized spacing */
+  .space-mobile {
+    @apply space-y-3 sm:space-y-4;
+  }
+  
+  .gap-mobile {
+    @apply gap-3 sm:gap-4 lg:gap-6;
+  }
+
+  /* Enhanced card shadows for mobile */
+  .card-mobile {
+    @apply bg-white rounded-lg border border-gray-100 p-3 sm:p-4 shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+  
+  /* Better scaling for 100% zoom */
+  .scale-100-optimized {
+    @apply text-sm sm:text-base lg:text-lg;
+  }
+  
+  .chart-container-100 {
+    @apply h-48 sm:h-56 lg:h-64;
+  }
+  
+  .metric-text-100 {
+    @apply text-base sm:text-lg lg:text-xl;
+  }
+  
+  /* Utility class for scaling any element from 150% to 100% */
+  .scale-150-to-100 {
+    transform: scale(1.0); /* No scaling by default */
+    transform-origin: top left;
+  }
+  
+  /* Utility class for scaling any element using CSS custom properties */
+  .scale-dynamic {
+    transform: scale(var(--scale-ratio));
+    transform-origin: top left;
+  }
+  
+  /* Responsive scaling utilities */
+  .scale-responsive {
+    transform: scale(calc(100% / 150%));
+    transform-origin: top left;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
