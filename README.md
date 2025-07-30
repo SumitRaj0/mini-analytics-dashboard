@@ -68,7 +68,7 @@ mini-analytics-dashboard/
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/SumitRaj0/mini-analytics-dashboard.git
    cd mini-analytics-dashboard
    ```
 
