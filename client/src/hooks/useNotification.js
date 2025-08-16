@@ -311,4 +311,4 @@ export const useNotification = (options = {}) => {
     count: notifications.length,
     hasNotifications: notifications.length > 0
   };
-}; 
+};

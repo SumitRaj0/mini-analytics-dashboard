@@ -11,7 +11,7 @@ import {
   ReferenceLine,
   Cell
 } from 'recharts';
-import { Calendar, TrendingUp, TrendingDown } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 
 const MonthlyPerformanceChart = ({ data = [], isLoading = false }) => {
   if (isLoading) {

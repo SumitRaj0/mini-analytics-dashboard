@@ -1,5 +1,5 @@
 import React from 'react';
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { PieChart as PieChartIcon, Activity, Target } from 'lucide-react';
 
 const AssetAllocationChart = ({ trades = [], isLoading = false }) => {
@@ -247,4 +247,4 @@ const AssetAllocationChart = ({ trades = [], isLoading = false }) => {
   );
 };
 
-export default AssetAllocationChart; 
+export default AssetAllocationChart;

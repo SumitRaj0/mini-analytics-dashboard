@@ -1,6 +1,6 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
-import { DollarSign, TrendingUp, TrendingDown } from 'lucide-react';
+import { DollarSign } from 'lucide-react';
 
 const ProfitDistributionChart = ({ trades = [], isLoading = false }) => {
   if (isLoading) {
@@ -166,4 +166,4 @@ const ProfitDistributionChart = ({ trades = [], isLoading = false }) => {
   );
 };
 
-export default ProfitDistributionChart; 
+export default ProfitDistributionChart;

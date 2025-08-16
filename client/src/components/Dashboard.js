@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { RefreshCw, AlertCircle, Play, Pause, TrendingUp, BarChart3, Download, FileText, Share2 } from 'lucide-react';
+import { RefreshCw, AlertCircle, Play, Pause, TrendingUp, Download, FileText, Share2 } from 'lucide-react';
 import { useNotification } from '../hooks/useNotification';
 import { useError } from '../hooks/useError';
 import { useZoomScale } from '../hooks/useZoomScale';
@@ -34,7 +34,7 @@ const Dashboard = () => {
     error: showErrorNotification 
   } = useNotification();
   const { handleApiError, clearError } = useError();
-  const { zoomLevel, scaleFactor } = useZoomScale();
+  const { scaleFactor } = useZoomScale();
 
   const fetchAnalytics = useCallback(async (showLoading = false) => {
     try {
@@ -338,14 +338,14 @@ const Dashboard = () => {
                  <button
                    onClick={handleManualRefresh}
                    disabled={loading}
-                   className="bg-blue-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                   className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-semibold transition-transform transform ${loading ? 'opacity-80 cursor-wait' : 'shadow-md hover:-translate-y-0.5'} ${loading ? 'bg-indigo-500' : 'bg-indigo-600 hover:bg-indigo-700'} text-white focus:outline-none focus:ring-2 focus:ring-indigo-300 disabled:opacity-50 disabled:cursor-not-allowed`}
                    title="Refresh data (Ctrl+R)"
                  >
                    <RefreshCw 
                      size={16} 
-                     className={`mr-2 ${loading ? 'animate-spin' : ''}`} 
+                     className={`mr-1 ${loading ? 'animate-spin' : ''}`} 
                    />
-                   Refresh
+                   <span>Refresh</span>
                  </button>
                </div>
              </div>
@@ -504,4 +504,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard; 
+export default Dashboard;

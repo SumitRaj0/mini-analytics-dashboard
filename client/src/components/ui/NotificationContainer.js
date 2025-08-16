@@ -1,13 +1,11 @@
 import React from 'react';
-import { 
-  CheckCircle, 
-  XCircle, 
-  AlertTriangle, 
-  Info, 
-  Loader2, 
-  X,
-  Download,
-  ExternalLink
+import {
+  CheckCircle,
+  XCircle,
+  AlertTriangle,
+  Info,
+  Loader2,
+  X
 } from 'lucide-react';
 
 const NotificationContainer = ({ notifications, onDismiss }) => {
@@ -149,4 +147,4 @@ const NotificationContainer = ({ notifications, onDismiss }) => {
   );
 };
 
-export default NotificationContainer; 
+export default NotificationContainer;

@@ -151,7 +151,7 @@ export const useDateFilter = (data = [], dateField = 'date') => {
     });
 
     return filtered;
-  }, [data, dateRange, sortOrder, extractDate, isDateInRange]);
+  }, [data, sortOrder, extractDate, isDateInRange]);
 
   /**
    * Clear all filters
@@ -225,4 +225,4 @@ export const useDateFilter = (data = [], dateField = 'date') => {
     isDescending: sortOrder === 'desc',
     hasActiveFilters: filterType !== 'all' || dateRange.start || dateRange.end
   };
-}; 
+};

@@ -130,24 +130,24 @@ export const useError = (options = {}) => {
    * @param {number} delay - Delay between retries in ms
    */
   const withRetry = useCallback(async (fn, maxRetries = 3, delay = 1000) => {
-    let lastError = null;
-    
-    for (let attempt = 1; attempt <= maxRetries; attempt++) {
-      try {
-        return await fn();
-      } catch (error) {
-        lastError = error;
-        
-        if (attempt === maxRetries) {
-          handleError(error, `Retry failed after ${maxRetries} attempts`, 'error');
-          throw error;
-        }
-        
-        // Wait before retry
-        await new Promise(resolve => setTimeout(resolve, delay * attempt));
-      }
-    }
-  }, [handleError]);
+    // lastError intentionally omitted to avoid unused variable warnings
+     
+     for (let attempt = 1; attempt <= maxRetries; attempt++) {
+       try {
+         return await fn();
+       } catch (error) {
+        // capture error and retry
+         
+         if (attempt === maxRetries) {
+           handleError(error, `Retry failed after ${maxRetries} attempts`, 'error');
+           throw error;
+         }
+         
+         // Wait before retry
+         await new Promise(resolve => setTimeout(resolve, delay * attempt));
+       }
+     }
+   }, [handleError]);
 
   /**
    * Get user-friendly error message
@@ -207,4 +207,4 @@ export const useError = (options = {}) => {
     severity: error?.severity || 'error',
     context: error?.context || 'Unknown'
   };
-}; 
+};
