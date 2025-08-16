@@ -1,0 +1,31 @@
+{
+  "analytics": {
+    "data": {
+      "totalTrades": 120,
+      "winningTrades": 65,
+      "losingTrades": 55,
+      "winRate": 54.2,
+      "profitFactor": 1.25,
+      "averageReturn": 2.3,
+      "sharpeRatio": 0.8,
+      "longestWinStreak": 6,
+      "longestLossStreak": 4,
+      "netProfit": 12500,
+      "maxDrawdown": 12.5,
+      "recentTrades": [
+        { "id": 1, "symbol": "AAPL", "side": "BUY", "qty": 10, "price": 150, "pnl": 120 },
+        { "id": 2, "symbol": "TSLA", "side": "SELL", "qty": 5, "price": 700, "pnl": -50 },
+        { "id": 3, "symbol": "MSFT", "side": "BUY", "qty": 8, "price": 300, "pnl": 80 }
+      ]
+    }
+  },
+  "performance-chart": {
+    "data": [
+      { "date": "2025-08-01", "value": 10000 },
+      { "date": "2025-08-05", "value": 10250 },
+      { "date": "2025-08-10", "value": 12400 },
+      { "date": "2025-08-15", "value": 12500 }
+    ]
+  },
+  "health": { "status": "ok" }
+}

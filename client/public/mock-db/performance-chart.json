@@ -1,0 +1,35 @@
+{
+  "data": [
+    { "date": "2025-06-02", "dailyPnL": 120, "cumulativePnL": 9000 },
+    { "date": "2025-06-08", "dailyPnL": -80, "cumulativePnL": 8920 },
+    { "date": "2025-06-15", "dailyPnL": 200, "cumulativePnL": 9120 },
+    { "date": "2025-06-20", "dailyPnL": -50, "cumulativePnL": 9070 },
+    { "date": "2025-06-28", "dailyPnL": 300, "cumulativePnL": 9370 },
+
+    { "date": "2025-07-01", "dailyPnL": 150, "cumulativePnL": 9520 },
+    { "date": "2025-07-04", "dailyPnL": 60, "cumulativePnL": 9580 },
+    { "date": "2025-07-07", "dailyPnL": -40, "cumulativePnL": 9540 },
+    { "date": "2025-07-10", "dailyPnL": 220, "cumulativePnL": 9760 },
+    { "date": "2025-07-14", "dailyPnL": -120, "cumulativePnL": 9640 },
+    { "date": "2025-07-18", "dailyPnL": 340, "cumulativePnL": 9980 },
+    { "date": "2025-07-22", "dailyPnL": 80, "cumulativePnL": 10060 },
+    { "date": "2025-07-27", "dailyPnL": -60, "cumulativePnL": 10000 },
+    { "date": "2025-07-30", "dailyPnL": 200, "cumulativePnL": 10200 },
+
+    { "date": "2025-08-01", "dailyPnL": 0, "cumulativePnL": 10200 },
+    { "date": "2025-08-02", "dailyPnL": 50, "cumulativePnL": 10250 },
+    { "date": "2025-08-03", "dailyPnL": -20, "cumulativePnL": 10230 },
+    { "date": "2025-08-04", "dailyPnL": 220, "cumulativePnL": 10450 },
+    { "date": "2025-08-05", "dailyPnL": 250, "cumulativePnL": 10700 },
+    { "date": "2025-08-06", "dailyPnL": -100, "cumulativePnL": 10600 },
+    { "date": "2025-08-07", "dailyPnL": 500, "cumulativePnL": 11100 },
+    { "date": "2025-08-08", "dailyPnL": -100, "cumulativePnL": 11000 },
+    { "date": "2025-08-09", "dailyPnL": 400, "cumulativePnL": 11400 },
+    { "date": "2025-08-10", "dailyPnL": 1200, "cumulativePnL": 12600 },
+    { "date": "2025-08-11", "dailyPnL": -150, "cumulativePnL": 12450 },
+    { "date": "2025-08-12", "dailyPnL": 80, "cumulativePnL": 12530 },
+    { "date": "2025-08-13", "dailyPnL": -50, "cumulativePnL": 12480 },
+    { "date": "2025-08-14", "dailyPnL": 120, "cumulativePnL": 12600 },
+    { "date": "2025-08-15", "dailyPnL": 100, "cumulativePnL": 12700 }
+  ]
+}

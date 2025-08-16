@@ -8,7 +8,8 @@ import {
   CartesianGrid, 
   Tooltip, 
   ResponsiveContainer, 
-  ReferenceLine 
+  ReferenceLine,
+  Cell
 } from 'recharts';
 import { Calendar, TrendingUp, TrendingDown } from 'lucide-react';
 
@@ -120,7 +121,7 @@ const MonthlyPerformanceChart = ({ data = [], isLoading = false }) => {
   return (
     <div className="card">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
-        <h3 className="text-base sm:text-lg font-semibold text-gray-800">Monthly Performance Trend</h3>
+        <h3 className="text-base sm:text-lg font-semibold text-slate-700">Monthly Performance Trend</h3>
         <div className="flex items-center gap-1 text-xs text-gray-600">
           <Calendar size={12} />
           {monthlyData.length} months
@@ -158,16 +159,16 @@ const MonthlyPerformanceChart = ({ data = [], isLoading = false }) => {
       <div className="h-48 sm:h-64">
         <ResponsiveContainer width="100%" height="100%">
           <ComposedChart data={monthlyData} margin={{ top: 5, right: 10, left: 10, bottom: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#eef2ff" />
             <XAxis 
               dataKey="month"
-              tick={{ fontSize: window.innerWidth < 640 ? 10 : 12, fill: '#64748b' }}
+              tick={{ fontSize: window.innerWidth < 640 ? 10 : 12, fill: '#475569' }}
               axisLine={{ stroke: '#e2e8f0' }}
             />
             <YAxis 
               yAxisId="pnl"
               tickFormatter={formatYAxisTick}
-              tick={{ fontSize: window.innerWidth < 640 ? 10 : 12, fill: '#64748b' }}
+              tick={{ fontSize: window.innerWidth < 640 ? 10 : 12, fill: '#475569' }}
               axisLine={{ stroke: '#e2e8f0' }}
               width={window.innerWidth < 640 ? 40 : 60}
             />
@@ -175,23 +176,22 @@ const MonthlyPerformanceChart = ({ data = [], isLoading = false }) => {
               yAxisId="winRate"
               orientation="right"
               domain={[0, 100]}
-              tick={{ fontSize: window.innerWidth < 640 ? 10 : 12, fill: '#64748b' }}
+              tick={{ fontSize: window.innerWidth < 640 ? 10 : 12, fill: '#475569' }}
               axisLine={{ stroke: '#e2e8f0' }}
               width={window.innerWidth < 640 ? 30 : 40}
             />
-            <ReferenceLine yAxisId="pnl" y={0} stroke="#64748b" strokeDasharray="2 2" />
+            <ReferenceLine yAxisId="pnl" y={0} stroke="#c7d2fe" strokeDasharray="2 2" />
             <Tooltip content={<CustomTooltip />} />
             
             <Bar 
               yAxisId="pnl"
               dataKey="totalPnL" 
-              radius={[2, 2, 0, 0]}
-              fill={(entry) => entry >= 0 ? '#22c55e' : '#ef4444'}
+              radius={[6, 6, 0, 0]}
             >
               {monthlyData.map((entry, index) => (
-                <Bar 
-                  key={`bar-${index}`}
-                  fill={entry.totalPnL >= 0 ? '#22c55e' : '#ef4444'}
+                <Cell 
+                  key={`cell-${index}`} 
+                  fill={entry.totalPnL >= 0 ? '#4f46e5' : '#ef4444'}
                 />
               ))}
             </Bar>
@@ -200,10 +200,10 @@ const MonthlyPerformanceChart = ({ data = [], isLoading = false }) => {
               yAxisId="winRate"
               type="monotone"
               dataKey="winRate"
-              stroke="#3b82f6"
+              stroke="#8b5cf6"
               strokeWidth={2}
-              dot={{ fill: '#3b82f6', strokeWidth: 0, r: 3 }}
-              activeDot={{ r: 4, fill: '#3b82f6' }}
+              dot={{ fill: '#8b5cf6', strokeWidth: 0, r: 3 }}
+              activeDot={{ r: 4, fill: '#8b5cf6' }}
             />
           </ComposedChart>
         </ResponsiveContainer>
@@ -212,7 +212,7 @@ const MonthlyPerformanceChart = ({ data = [], isLoading = false }) => {
       {/* Legend */}
       <div className="mt-4 flex items-center justify-center gap-6 text-xs">
         <div className="flex items-center gap-2">
-          <div className="w-3 h-3 bg-green-500 rounded"></div>
+          <div className="w-3 h-3 bg-indigo-600 rounded"></div>
           <span className="text-gray-600">Profit</span>
         </div>
         <div className="flex items-center gap-2">
@@ -220,7 +220,7 @@ const MonthlyPerformanceChart = ({ data = [], isLoading = false }) => {
           <span className="text-gray-600">Loss</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-3 h-0.5 bg-blue-500"></div>
+          <div className="w-3 h-0.5 bg-violet-500"></div>
           <span className="text-gray-600">Win Rate %</span>
         </div>
       </div>
@@ -228,4 +228,4 @@ const MonthlyPerformanceChart = ({ data = [], isLoading = false }) => {
   );
 };
 
-export default MonthlyPerformanceChart; 
+export default MonthlyPerformanceChart;

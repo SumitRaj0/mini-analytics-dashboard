@@ -9,6 +9,12 @@ const api = axios.create({
   },
 });
 
+// If running in development and no backend present, point to the mock DB served by the dev server
+if (process.env.NODE_ENV === 'development') {
+  // react-scripts serves static files from public/, so we expose mock JSON via relative path
+  api.defaults.baseURL = process.env.REACT_APP_API_URL || '/mock-db';
+}
+
 // Request interceptor to prevent caching
 api.interceptors.request.use(
   (config) => {
@@ -49,15 +55,13 @@ api.interceptors.response.use(
 // Analytics API service
 export const analyticsService = {
   // Get analytics data
-  getAnalytics: () => api.get('/analytics'),
+  getAnalytics: () => api.get(process.env.NODE_ENV === 'development' ? '/analytics.json' : '/analytics'),
   
   // Get performance chart data
-  getPerformanceChart: () => api.get('/analytics/performance-chart'),
+  getPerformanceChart: () => api.get(process.env.NODE_ENV === 'development' ? '/performance-chart.json' : '/analytics/performance-chart'),
   
   // Health check
-  healthCheck: () => api.get('/health', { 
-    baseURL: 'http://localhost:5000' 
-  }),
+  healthCheck: () => api.get(process.env.NODE_ENV === 'development' ? '/health.json' : '/health'),
 };
 
-export default api; 
+export default api;

@@ -1,0 +1,112 @@
+{
+  "data": {
+    "totalTrades": 120,
+    "winningTrades": 65,
+    "losingTrades": 55,
+    "winRate": 54.2,
+    "profitFactor": 1.25,
+    "averageReturn": 2.3,
+    "sharpeRatio": 0.8,
+    "longestWinStreak": 6,
+    "longestLossStreak": 4,
+    "netProfit": 12500,
+    "maxDrawdown": 12.5,
+    "lastUpdated": "2025-08-15T11:25:39",
+    "recentTrades": [
+      {
+        "id": 101,
+        "symbol": "AAPL",
+        "type": "long",
+        "entryPrice": 148.0,
+        "exitPrice": 150.0,
+        "quantity": 10,
+        "pnl": 20,
+        "pnlPercentage": 1.35,
+        "exitDate": "2025-08-15T10:30:00",
+        "tags": ["Earnings", "Momentum"]
+      },
+      {
+        "id": 102,
+        "symbol": "TSLA",
+        "type": "short",
+        "entryPrice": 705.0,
+        "exitPrice": 695.0,
+        "quantity": 5,
+        "pnl": -50,
+        "pnlPercentage": -1.42,
+        "exitDate": "2025-08-14T14:12:00",
+        "tags": ["Volatility"]
+      },
+      {
+        "id": 103,
+        "symbol": "MSFT",
+        "type": "long",
+        "entryPrice": 292.0,
+        "exitPrice": 302.0,
+        "quantity": 8,
+        "pnl": 80,
+        "pnlPercentage": 3.42,
+        "exitDate": "2025-08-13T09:45:00",
+        "tags": ["Breakout"]
+      },
+      {
+        "id": 104,
+        "symbol": "GOOG",
+        "type": "long",
+        "entryPrice": 2550.0,
+        "exitPrice": 2570.0,
+        "quantity": 2,
+        "pnl": 40,
+        "pnlPercentage": 0.78,
+        "exitDate": "2025-08-12T13:05:00",
+        "tags": ["Earnings"]
+      },
+      {
+        "id": 105,
+        "symbol": "NFLX",
+        "type": "short",
+        "entryPrice": 510.0,
+        "exitPrice": 505.0,
+        "quantity": 3,
+        "pnl": 15,
+        "pnlPercentage": 0.98,
+        "exitDate": "2025-08-11T15:20:00",
+        "tags": []
+      },
+      {
+        "id": 106,
+        "symbol": "AMZN",
+        "type": "long",
+        "entryPrice": 3300.0,
+        "exitPrice": 3315.0,
+        "quantity": 1,
+        "pnl": 15,
+        "pnlPercentage": 0.45,
+        "exitDate": "2025-08-10T11:00:00",
+        "tags": ["Long-term"]
+      }
+    ],
+    "profitDistribution": {
+      "losses": [-50, -29, -7],
+      "breakEven": [0],
+      "profits": [14, 35, 56, 78, 99]
+    },
+    "assetAllocation": [
+      { "symbol": "AAPL", "trades": 1, "percent": 48.0, "avgPnl": 120 },
+      { "symbol": "MSFT", "trades": 1, "percent": 32.0, "avgPnl": 80 },
+      { "symbol": "TSLA", "trades": 1, "percent": 20.0, "avgPnl": -50 }
+    ],
+    "monthlyPerformance": [
+      { "month": "Aug", "totalPnl": 12500, "tradingDays": 4, "profitableDays": 1, "winRate": 25.0, "avgDaily": 3125 }
+    ],
+    "summary": {
+      "performancePoints": [
+        { "date": "2025-08-01", "value": 10000 },
+        { "date": "2025-08-05", "value": 10250 },
+        { "date": "2025-08-10", "value": 12400 },
+        { "date": "2025-08-15", "value": 12500 }
+      ],
+      "winLoss": { "wins": 65, "losses": 55 }
+    }
+  }
+}

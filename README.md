@@ -1,10 +1,12 @@
 # Trading Analytics Dashboard
 
-A modern, responsive analytics dashboard built with React and Express.js for tracking trading performance metrics and insights.
+A modern, responsive analytics dashboard built with React for tracking trading performance metrics and insights.
+
 
 ## 🚀 Live Demo
 
 [View Live Demo](http://localhost:3000) (when running locally)
+
 
 ## 📁 Project Structure
 
@@ -15,14 +17,12 @@ mini-analytics-dashboard/
 │   │   ├── components/    # React components
 │   │   ├── hooks/         # Custom React hooks
 │   │   ├── contexts/      # React contexts
-│   │   ├── services/      # API services
+│   │   ├── services/      # API services (local data only)
 │   │   └── utils/         # Utility functions
 │   └── public/            # Static assets
-├── server/                 # Express.js backend
-│   ├── server.js          # Main server file
-│   └── package.json       # Server dependencies
 └── setup.js               # Project setup script
 ```
+
 
 ##  Tech Stack
 
@@ -31,32 +31,30 @@ mini-analytics-dashboard/
 - **Tailwind CSS** - Styling and responsive design
 - **Recharts** - Data visualization and charts
 - **Lucide React** - Icons
-- **Axios** - HTTP client for API calls
 
-### Backend
-- **Express.js** - REST API server
-- **CORS** - Cross-origin resource sharing
-- **Nodemon** - Development server with auto-reload
 
 ##  Features
 
+
 ### Analytics Dashboard
-- **Real-time metrics** - Win rate, profit factor, Sharpe ratio
+- **Metrics** - Win rate, profit factor, Sharpe ratio
 - **Performance charts** - Cumulative P&L visualization
 - **Trade analysis** - Recent trades with detailed information
 - **Asset allocation** - Portfolio distribution charts
 - **Profit distribution** - P&L analysis visualization
 
+
 ###  User Experience
 - **Responsive design** - Works on all screen sizes
-- **Auto-refresh** - Real-time data updates
 - **Export functionality** - CSV and PDF export options
 - **Keyboard shortcuts** - Quick access to features
+
 
 ###  Mobile Optimized
 - **Touch-friendly** - Optimized for mobile devices
 - **Responsive charts** - Charts adapt to screen size
 - **Mobile navigation** - Intuitive mobile interface
+
 
 ##  Quick Start
 
@@ -77,51 +75,28 @@ mini-analytics-dashboard/
    node setup.js
    ```
 
-3. **Start the development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open your browser**
-   - Frontend: http://localhost:3000
-   - Backend API: http://localhost:5000
-
-##  Setup Instructions
-
-### Manual Setup (Alternative)
-
-1. **Install root dependencies**
-   ```bash
-   npm install
-   ```
-
-2. **Install server dependencies**
-   ```bash
-   cd server
-   npm install
-   cd ..
-   ```
-
 3. **Install client dependencies**
    ```bash
    cd client
    npm install
-   cd ..
    ```
 
-4. **Start both servers**
+4. **Start the React app**
    ```bash
-   npm run dev
+   npm start
    ```
 
-### Available Scripts
+5. **Open your browser**
+   - Frontend: http://localhost:3000
 
-- `npm run dev` - Start both frontend and backend
-- `npm run server` - Start only the backend
-- `npm run client` - Start only the frontend
+
+##  Available Scripts
+
+- `npm start` - Start the frontend React app
 - `npm run build` - Build the frontend for production
 
-## 🎯 Key Decisions & Architecture
+
+## � Key Decisions & Architecture
 
 ### Frontend Architecture
 
@@ -142,19 +117,6 @@ mini-analytics-dashboard/
 - Created custom hooks for complex state logic
 - Used proper error boundaries for error handling
 
-### Backend Architecture
-
-**API Design**
-- RESTful API endpoints for data retrieval
-- Implemented proper error handling and status codes
-- Used CORS for cross-origin requests
-- Created mock data generators for realistic testing
-
-**Data Structure**
-- Designed comprehensive analytics data model
-- Implemented trade data with realistic fields
-- Created performance metrics calculations
-- Used proper data formatting and validation
 
 ### Technical Decisions
 
@@ -176,6 +138,7 @@ mini-analytics-dashboard/
 - Created efficient data fetching patterns
 - Used proper error boundaries
 
+
 ## 🎨 Design Decisions
 
 ### Visual Design
@@ -196,12 +159,13 @@ mini-analytics-dashboard/
 - **Interactive elements** - Hover states and tooltips
 - **Responsive charts** - Adapt to different screen sizes
 
+
 ##  Development Process
 
 ### Code Organization
 - **Modular components** - Each component has a single responsibility
 - **Reusable hooks** - Custom hooks for common functionality
-- **Service layer** - API calls separated from components
+- **Service layer** - Data separated from components
 - **Utility functions** - Shared helper functions
 
 ### Testing Strategy
@@ -213,8 +177,9 @@ mini-analytics-dashboard/
 ### Performance Considerations
 - **Lazy loading** - Components load when needed
 - **Optimized re-renders** - Proper dependency arrays
-- **Efficient data fetching** - Minimal API calls
+- **Efficient data handling** - Minimal data processing
 - **Bundle optimization** - Tree shaking and code splitting
+
 
 ## 📸 Screenshots
 
@@ -232,6 +197,32 @@ mini-analytics-dashboard/
 
 
 
+
+## Local Development (Mock Mode)
+
+The frontend now includes a lightweight mock API so you can run the dashboard locally without a backend. Static JSON files are served from `client/public/mock-db` and the client is configured to fetch these when running in development.
+
+- Start the app:
+  1. cd client; npm install
+  2. npm start
+  3. Open http://localhost:3000
+
+- Mock files (examples):
+  - `client/public/mock-db/analytics.json`
+  - `client/public/mock-db/performance-chart.json`
+  - `client/public/mock-db/health.json`
+
+- Switch to a real backend:
+  - Set the environment variable `REACT_APP_API_URL` to your API base (for example `http://localhost:5000/api`) and restart the dev server.
+
+## Recent Changes
+
+- Converted project to client-only for local development (removed server references).
+- Added richer mock data so all dashboard widgets render without an API.
+- Populated Recent Trades with full trade objects (exitDate, entryPrice, exitPrice, quantity, pnl, pnlPercentage, type, tags).
+- Extended performance data across multiple months and added more daily points for better chart resolution.
+- Updated Monthly Performance Trend visuals: profit bars use indigo, losses red, and win-rate line uses a violet accent.
+
 ## 🚀 Deployment
 
 ### Frontend Deployment
@@ -240,11 +231,6 @@ cd client
 npm run build
 ```
 
-### Backend Deployment
-```bash
-cd server
-npm start
-```
 
 ## 🤝 Contributing
 
@@ -254,9 +240,11 @@ npm start
 4. Test thoroughly
 5. Submit a pull request
 
+
 ## 📄 License
 
 This project is licensed under the MIT License.
+
 
 ##  Acknowledgments
 
@@ -267,4 +255,4 @@ This project is licensed under the MIT License.
 
 ---
 
-**Built with ❤️ using React and Express.js** 
+**Built with ❤️ using React**
